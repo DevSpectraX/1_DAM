@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color-text: #000000;
+  --secundary-color-text: #e9dfd4;
+  --background-dark-color: #3333334d; /* negro claro */
+  /* verde solicitar presupuesto */--background-green-color-button: #61ce70b4; 
+  /* color del texto en negrita */--color-text-bold: #7a7a7a; 
+  --spacing: 1rem;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* dar formato fino a h1 y tamaño */
+h1 {
+  text-align: center;
+  color: var(--secundary-color-text);
+  font-size: 5rem;
+  font-weight: 200;
+}
+
+/* estilar los h2 y centrarlos*/
+h2 {
+  padding: var(--spacing);
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ---HEADER--- */
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-dark-color);
+  backdrop-filter: blur(5px); /* poner efecto fondo desenfocado */
+  z-index: 10; /* subir capa del header por que el video se superpone */
+}
+
+header > img {
+  padding: 1rem;
+  min-width: 50px;
+  max-width: 200px;
+}
+
+header nav {
+  width: 100%;
+}
+
+/* centrar elementos del ul del nav */
+header ul {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+header li {
+  font-size: xx-large;
+  font-weight: bold;
+  padding: var(--spacing);
+  text-transform: uppercase;
+  position: relative; /* necesario para el pseudo-elemento ::after */
+  color: var(--secundary-color-text);
+  list-style-type: none;
+  font-size: large;
+  font-weight: bold;
+  transition: 0.5s ease;
+}
+
+header li:hover {
+  font-size: 1.2rem;
+  transform: translateY(-3px); /* leve desplazamiento arriba */
+}
+
+/* aplicar linea debajo a todos menos al ultimo*/
+header li:not(:last-child):after {  /* aplicar not para no aplicar al ultimo li */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px; /* grosor de la línea */
+  width: 0;
+  background-color: var(--secundary-color-text); /* color azul */
+  transition: 0.5s ease;
+  border-radius: 5px;
+}
+
+/* hacer que la linea se amplie */
+header li:hover::after {
+  width: 100%;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--secundary-color-text);
+}
+/* ultimo li del nav*/
+
+header li:last-child a{
+  color: var(--secundary-color-text);
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+header li:last-child:hover a{
+  background-color: var(--background-green-color-button);
+}
+
+
+/* ---SECTION--- */
+
+section {
+  margin-bottom: 5rem;
+}
+/* posicionar relative al primer section para centrar el h1 y p encima del video */
+
+main > section {
+  position: relative;
+}
+
+/* ---SECTION HERO */
+
+main > section:first-of-type h1 {
+  font-weight: 500;
+}
+
+/* superponer texto sobre video */
+main > section:first-of-type div {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* estilar el eslogan */
+#eslogan{
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 300;
+  color: var(--secundary-color-text);
+}
+
+/* limitar tamaño de videos */
+section video {
+  width: 100%;  /* 100% del ancho de la pantalla */
+  height: 100vh;  /* el total de pantalla visible para que lo cubra entero */
+  object-fit: cover;
+}
+
+/* ---SIGUIENTES SECTIONS--- */
+
+/* section 2 poner grid */
+main > section:nth-of-type(2) div {
+  padding: var(--spacing);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  gap: var(--spacing);
+}
+
+/* ajustar img del segundo section */
+main > section:nth-of-type(2) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  object-position: center;
+}
+
+/* estilar los p y cambiar letra a roboto*/
+main p {
+  text-align: justify;
+  margin-left: var(--spacing);
+  padding: var(--spacing);
+  font-size: 1rem;
+  font-family: roboto;
+}
+
+/* poner en negrita los span */
+
+span {
+  color: var(--color-text-bold);
+  font-weight: 900;
+}
+
+/* cambiar fondo del tercer section */
+main section:nth-of-type(3) {
+  background-color: var(--secundary-color-text);
+  border-radius: 10px;
+}
+/* estilar los li del p */
+
+section:nth-of-type(3) li {
+  list-style: none;
+  font-family: roboto;
+  margin-left: 4rem;
+  padding: var(--spacing);
+  font-weight: bold;
+}
+/* ajustar iframe del video de youtube con id*/
+main section:nth-of-type(3) video{
+  border-radius: 10px;
+  object-fit: cover;
+  margin-top: var(--spacing);
+  width: 100%;
+  height: 100vh;  /* ocupa el 100% del vh */
+}
+
+/* quitar margen inferior al ultimo section */
+main section:nth-of-type(4) {
+  margin-bottom: 0; /* quitar margin para ajustar al footer */
+}
+
+
+/* ajustar iframe al ancho total de la pantalla*/
+section > iframe:last-of-type{
+  width: 100%;
+  height: 50vh;
+  border: 0;
+}
+
+/* ---FOOTER--- */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color-text);
+  width: 100%;
+  height: 200px;
+  color: var(--secundary-color-text);
+  font-family: roboto;
+  padding: var(--spacing);
+}
+
+footer section,
+footer address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;/* decirle que ocupe el 100% de alto del footer */
+  width: 30%;/* hacer que ocupe un 30% para que el section central quede en el centro */
+}
+
+footer address {
+  gap: var(--spacing);
+}
+
+/* parte central del footer */
+
+footer section:nth-of-type(1){
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/*  alinear y centrar logo del centro del footer */
+footer section:nth-of-type(1) img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+
+}
+
+/* parte derecha del footer */
+
+footer section:nth-of-type(2){
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer section:nth-of-type(2) img{
+  width: 100%;
+  padding: 0.5rem
+}
+
+
+footer ul:nth-of-type(1){
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+footer ul:nth-of-type(1) li{
+  margin: 0;  /* quitar margin */
+  padding: 0; /* quitar padding */
+}
+
+
+footer ul:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+footer ul:nth-of-type(2) li {
+  width: 100%;
+  margin: 0;
+  width: 100%;
+  padding: 0;/*quitar padding */
+  text-align: center;
+  list-style: none;
+}
+
+/* ---FORMULARIO--- */
+
+form{
+  color: var(--primary-color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: var(--secundary-color-text);
+  font-family: roboto;
+}
+form h2{
+  margin-top: 8rem;
+  font-family: "Cormorant Garamond", serif;
+  width: 50%;
+}
+main form fieldset{
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing);
+  margin: 0.7rem;
+  padding: 2rem;
+}
+
+.btn{
+  border: 2px solid var(--background-dark-color);
+  background-color: var(--background-dark-color);
+  color: var(--primary-color-text);
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.btn:hover{
+  background-color: var(--background-green-color-button);
+  font-size: 0.9rem;
+  transition: 0.5s ease;
+}
+
+/* media queries */
+@media screen and (min-width: 640px) and (max-width: 1280px){
+  header a{
+    font-size: 0.9rem;
+  }
+  header img{
+    max-width: 150px;
+  }
+  section > h2{
+    font-size: 3rem;
+  }
+  footer{
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  footer ul:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+  }
+  form h2{
+    width: 100%;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 640px){
+  
+  header ul {
+    display: none;
+  }
+  
+  header img {
+    width: 150px;
+  }
+  section > h2{
+    font-size: 2rem;
+  }
+   footer ul:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+  }
+  footer li{
+    font-size: 0.7rem;
+  }
+  footer p{
+    font-size: 0.7rem;
+  }
+  .form h2{
+    font-size: 2rem;
+  }
+}

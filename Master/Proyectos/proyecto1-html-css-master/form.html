@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://whipdetail.com/wp-content/uploads/2025/04/Recurso-5.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Whipdetail</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://whipdetail.com/wp-content/uploads/2025/04/Recurso-4-e1747056209377-1024x500.png"
+        alt="logo de whipdetail"
+      />
+      <nav>
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="#null">Limpiezas básicas</a></li>
+          <li><a href="#null">Limpieza detail</a></li>
+          <li><a href="#null">Limpieza integral</a></li>
+          <li><a href="#null">Pulido coche</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#null">Blog</a></li>
+          <li><a href="./form.html">Solicitar presupuesto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form
+        class="form"
+        action=""
+        name="formulario-presupuesto"
+        target="_self"
+        enctype="application/x-www-form-urlencoded"
+      >
+        <h2>Solicita tu Presupuesto</h2>
+
+        <fieldset>
+          <legend>Informacion personal</legend>
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="telefono">Teléfono de contacto</label>
+          <input type="tel" id="telefono" name="telefono" />
+        </fieldset>
+        <fieldset>
+          <legend>Servicios</legend>
+          <input list="servicios" placeholder="Elegir servicio" />
+          <datalist id="servicios">
+            <option value="Limpieza basica"></option>
+            <option value="Limpieza Detail"></option>
+            <option value="Limpieza integral"></option>
+            <option value="Pulido del vehiculo"></option>
+          </datalist>
+        </fieldset>
+        <fieldset>
+          <legend>Comentarios adicionales</legend>
+          <label for="comentario">¿Debemos saber algo?</label>
+          <input
+            type="text"
+            id="comentario"
+            name="comentario"
+            placeholder="La llave para ruedas esta en la guantera"
+          />
+        </fieldset>
+
+        <input class="btn" type="submit" value="Solicitar Presupuesto" />
+      </form>
+    </main>
+  </body>
+</html>
