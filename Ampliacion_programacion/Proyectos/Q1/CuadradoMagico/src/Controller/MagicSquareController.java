@@ -2,6 +2,9 @@ package Controller;
 
 import java.util.Scanner;
 
+
+/*He hecho este ejercicio mediante el algoritmo de Fisher-Yates, que es mucho mas eficiente
+que generar aleatoriamente todos los numeros de la matriz hasta que no se repitan*/
 public class MagicSquareController {
     Scanner scanner = new Scanner(System.in);
     private int n;
@@ -9,8 +12,12 @@ public class MagicSquareController {
     private int [][]square;
 
     public void startSquare(){
-        System.out.println("¿Cuántas casillas quieres para tu cuadrado mágico?");
-        n = scanner.nextInt();
+
+        do {
+            System.out.println("¿Cuántas casillas quieres para tu cuadrado mágico?");
+            n = scanner.nextInt();
+            checkInputUser();
+        }while (n < 3 || n > 4);
         // La constante mágica es (n*(n*n) +1)/2, el total de las sumas siempre sera esa formula
         magicSum = (n*(n*n + 1))/2;
         square = new int[n][n];
@@ -19,6 +26,15 @@ public class MagicSquareController {
 
     }
 
+    private void checkInputUser (){
+        if(n < 3){
+            System.out.println("No hay ningún cuadrado mágico de 2 x 2");
+        } else if (n > 4) {
+            System.out.println("No puedo calcular un cuadrado mágico tan grande porque tardaría mucho tiempo");
+
+        }
+        else System.out.println("Calculando...");
+    }
     private void searchAlgorithm(){
         int attempt = 0;
         do {
@@ -37,19 +53,18 @@ public class MagicSquareController {
 
     private void generateMatrix(){
         
-        //Creo un array de numeros de n*n y los añado al array (i+1)
+        //Creo un array de numeros consecutivos de n*n y los añado al array con
         int[] numbers = new int[n*n];
         int index = 0;
         for (int i = 0; i < n*n; i++){
-            numbers[i] = i + 1;                
+            numbers[i] = i + 1;
             }
 
         /*Hay un algoritmo que se llama "Fisher-Yates"
         que funciona recorriendo el array al reves, y
         asignamos a una variable temporal el ultimo indice,
         luego con un math.random elejimos una posicion al azar
-        y pasamos el ultimo indice a esa posicion y el elemento
-        de esta posicion la pasamos al ultimo*/
+        e intercambiamos sus posiciones*/
 
         for (int i = numbers.length -1; i > 0; i--) {
             int j = (int)(Math.random() * (i+1));
@@ -58,6 +73,8 @@ public class MagicSquareController {
             numbers[j] = temp;
             
         }
+
+        //Llenamos la matriz
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 square[i][j] = numbers[index];
@@ -90,7 +107,8 @@ public class MagicSquareController {
         for (int i = 0; i < n; i++) {
             int sum = 0;
             for (int j = 0; j < n; j++) {
-                sum += square[i][j];
+                // Para sumar columnas lo mas efectivo es intercambiar los valores de j y de i
+                sum += square[j][i];
 
             }
             if (sum != magicSum)
@@ -112,7 +130,7 @@ public class MagicSquareController {
             return false;
         }
         
-        else return true;
+        return true;
     }
 
 
@@ -126,7 +144,7 @@ public class MagicSquareController {
             return false;
         }
 
-        else return true;
+        return true;
 
     }
 
