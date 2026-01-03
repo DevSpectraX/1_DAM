@@ -15,26 +15,14 @@ public class Carrera {
     };
 
 
+    public ArrayList<Coche> getParticipantes() {
+        return participantes;
+    }
 
 
-
-
-
-
-
-
-
-    public void simularCarrera(){
-
-    };
-
-    public void ordenarResultados(){
-
-    };
-
-    public void asignarPuntos(){
-
-    };
+    public int getKmCarrera() {
+        return kmCarrera;
+    }
 
 }
 

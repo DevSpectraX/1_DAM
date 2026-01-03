@@ -5,29 +5,24 @@ import java.util.ArrayList;
 /*Representa un conjunto de carreras con acumulacion
 de puntos y clasificacion general*/
 public class Campeonato {
-    private ArrayList<Carrera> carreras;
-    private ArrayList<Coche> coche;
+    private ArrayList<Coche> participantes;
+    private int nCarreras;
+
+    public Campeonato(ArrayList<Coche> participantes, int nCarreras){
+        this.participantes = participantes;
+        this.nCarreras = nCarreras;
+    }
+
+
+    public ArrayList<Coche> getParticipantes() {
+        return participantes;
+    }
 
 
 
-
-
-
-    public void ejecutarCampeonato(){
-
-    };
-
-    public void mostrarClasificacion(){
-
-    };
-
-
-
-
-
-
-
-
+    public int getnCarreras() {
+        return nCarreras;
+    }
 
 
 }
