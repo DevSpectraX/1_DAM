@@ -5,12 +5,18 @@ public class Libro {
     private String autor;
     private int numPaginas;
     private double precio;
+    //Añadido 2 atributos para hacer Ejercicio10_SistemaDeBiblioteca
+    private String isbn;
+    private boolean prestado;
 
-    public Libro(String titulo, String autor, int numPaginas, double precio){
+    public Libro(String titulo, String autor, int numPaginas, double precio,
+    String isbn){
         this.titulo = titulo;
         this.autor = autor;
         this.numPaginas = numPaginas;
         this.precio = precio;
+        this.isbn = isbn;
+        this.prestado = false;
 
 
     }
@@ -32,10 +38,29 @@ public class Libro {
 
     public void aplicarDescuento(double porcentaje){
         System.out.println("Aplcando descuento del "+ (int)porcentaje + "%...");
-        setPrecio((getPrecio() * ((100 - porcentaje)/100)));
+        setPrecio((precio - (precio * porcentaje / 100)));
         System.out.println("Precio nuevo: " +getPrecio()+ " €");
     }
+    //Añadidos metodos nuevos para Ejercicio10_SistemaDeBiblioteca
+    public boolean prestar(){
+        if(!prestado) {
+            prestado = true;
+            return true;
+        }
+        System.out.println("El libro ya ha sido prestado");
+        return false;
+    }
+    public boolean devolver(){
+        System.out.println("Devolucion del libro "+isbn+"...");
+        if (!prestado){
+            System.out.println("No se puede devolver un libro que no tienes");
+            return false;
+        }
+        prestado = false;
+        System.out.println("Libro devuelto correctamente");
 
+        return true;
+    }
 
 
 
@@ -73,5 +98,18 @@ public class Libro {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+    public String getIsbn(){
+        return isbn;
+    }
+    public void setPrestado(boolean prestado) {
+        this.prestado = prestado;
+    }
+    public boolean getPrestado(){
+        return prestado;
     }
 }
