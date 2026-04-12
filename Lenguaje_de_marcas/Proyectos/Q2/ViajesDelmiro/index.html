@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Viajes Delmiro</title>
+  </head>
+
+  <body class="bg-gradient-to-tr from-slate-700 to-blue-950 text-gray-200">
+    <header>
+  <section class="bg-blue-950 text-white fixed w-full top-0 lg:px-60">
+    <div class="flex justify-between items-center px-6 py-4">
+      <span class="font-bold tracking-wider md: m-auto md:text-4xl">Viajes Delmiro</span>
+      <button id="menu-btn" class="text-white text-2xl md:hidden">☰</button>
+    </div>
+
+    <ul id="menu" class="hidden flex-col list-none px-6 pb-4 text-base gap-6 md:flex md:flex-row md:justify-evenly md:text-xl md:p-4 md:mb-6 lg:justify-evenly">
+      <li><a href="#inicio" class="hover:text-blue-200">Inicio</a></li>
+      <li><a href="#destinos" class="hover:text-blue-200">Destinos</a></li>
+      <li><a href="#informacion" class="hover:text-blue-200">Más Información</a></li>
+      <li><a href="#reserva" class="hover:text-blue-200">Reservar</a></li>
+      <li><a href="#contactanos" class="hover:text-blue-200">Contáctanos</a></li>
+    </ul>
+  </section>
+
+  
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+    });
+  </script>
+      <section
+        id="inicio"
+        class="flex flex-col justify-center items-center gap-10 bg-slate-200 text-blue-950 p-8 h-screen md:gap-24 md:px-24 lg:px-60"
+      >
+        <h1 class="text-4xl tracking-wider font-bold md:mt-24 md:text-7xl">Viajes Delmiro</h1>
+        <p class="text-xl text-justify font-semibold md:text-4xl">La única agencia donde los adultos viajan gratis. Sí, has leído bien. Los niños se encargan de todo.</p>
+      <div class="flex gap-6 md:gap-14">
+        <a href="#destinos" class="bg-sky-500 hover:bg-sky-600 text-white rounded-2xl px-6 py-3 text-xl font-semibold md:px-10 md:py-6 md:text-4xl">Ver destinos</a>
+        <a href="#reserva" class="bg-blue-950 hover:bg-blue-900 text-white rounded-2xl px-6 py-3 text-xl font-semibold md:px-10 md:py-6 md:text-4xl">Reservar</a>
+      </div>
+
+      <div class="border-3 border-blue-950 rounded-2xl px-6 py-4 mt-4">
+        <p class="font-bold text-lg md:text-4xl">🌴 Oferta del mes</p>
+        <p class="text-base mt-1 text-justify md:text-2xl">Cancún para 2 adultos — completamente gratis. Solo necesitas traer a 3 niños con tarjeta de crédito propia.</p>
+      </div>
+      
+      
+      </section>
+    </header>
+    <main class="flex flex-col p-6 gap-10 md:p-12 md:gap-14 md:mx-10 lg:gap-28 lg:px-40 xl:mx-36" >
+      <section id="destinos" class="scroll-mt-16 md:scroll-m-48">
+        <h2 class="text-2xl my-4 md:mb-8 md:text-5xl">Destinos</h2>
+        <p class="text-justify md:text-2xl">
+          Explora los mejores destinos del mundo sin preocuparte por el precio.
+          En Viajes Delmiro, los adultos viajan gratis mientras los pequeños se
+          encargan de la cuenta.
+        </p>
+        <p class="my-4 md:text-3xl">Este mes tenemos disponibles:</p>
+        <div class="grid grid-cols-1 my-10 gap-6 mx-auto max-w-80 md:max-w-max md:grid-cols-2 md:gap-14 md:my-4 md:text-2xl lg:grid-cols-3 lg:gap-4">
+          <article class="bg-slate-800 rounded-xl p-8">
+            <h3 class="text-lg text-center mb-4 md:text-4xl">Cancún, México</h3>
+            <p class="text-justify">Playa, sol y margaritas para los mayores.</p>
+          </article>
+          <article class="bg-slate-800 rounded-xl p-8">
+            <h3 class="text-lg text-center mb-4 md:mb-8 md:text-4xl">París, Francia</h3>
+            <p class="text-justify">Romance garantizado, los niños pagan el croissant.</p>
+          </article class="bg-slate-800 rounded-xl p-8">
+          <article class="bg-slate-800 rounded-xl p-8 gap-4">
+            <h3 class="text-lg text-center mb-4 md:mb-8 md:text-4xl">Tokio, Japón</h3>
+            <p class="text-justify">Cultura, tecnología y sushi cortesía de tus hijos.</p>
+          </article>
+          <article class="bg-slate-800 rounded-xl p-8">
+            <h3 class="text-lg text-center mb-4 md:mb-8 md:text-4xl">Maldivas</h3>
+            <p class="text-justify">Lujo absoluto, que lo disfruten los adultos.</p>
+          </article>
+          <article class="bg-slate-800 rounded-xl p-8">
+            <h3 class="text-lg text-center mb-4 md:mb-8 md:text-4xl">Nueva York, EE.UU.</h3>
+            <p class="text-justify">La ciudad que nunca duerme, y los niños tampoco.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="informacion" class="scroll-mt-16 md:scroll-m-48">
+        <h2 class="text-2xl my-4 md:text-5xl">Más Información</h2>
+        <p class="text-justify md:text-2xl">
+          Viajes Delmiro nació con una filosofía simple: los adultos merecen
+          descansar, y los niños merecen la experiencia de contribuir a la
+          economía familiar desde temprana edad.
+        </p>
+        <p class="text-xl my-4 md:my-8 md:text-4xl">¿Cómo funciona?</p>
+        <ul class="flex flex-col text-justify gap-2 md:text-2xl md:gap-4">
+          <li>El adulto elige el destino, el hotel y el vuelo.</li>
+          <li>El niño firma el contrato y asume los gastos.</li>
+          <li>
+            Nosotros gestionamos todo para que no tengas que preocuparte de
+            nada.
+          </li>
+          <li>El niño aprende responsabilidad financiera. Todos ganan.</li>
+        </ul>
+        <p class="font-semibold mt-8 text-justify md:text-2xl md:mt-10">
+          Contamos con <span class="tracking-wider font-extrabold text-blue-400">más de 10 años de experiencia</span> enviando familias felices a
+          todo el mundo. Los adultos regresan descansados y sonrientes, mientras que los niños, aún están
+          procesando la factura.
+        </p>
+      </section>
+
+      <section id="reserva" class="scroll-mt-16 md:scroll-mt-48">
+        <div class="m-auto"><h2 class="text-2xl my-4 md:mb-8 md:text-5xl">Reservar</h2>
+        <form class="flex flex-col gap-1 md:gap-2 md:text-2xl">
+  <label for="nombre">Nombre completo</label>
+  <input class="mb-4" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required/>
+
+  <label for="correo">Correo electrónico</label>
+  <input class="mb-4" type="email" id="correo" name="correo" placeholder="tu@correo.com" required/>
+
+  <label for="telefono">Teléfono</label>
+  <input class="mb-4" type="tel" id="telefono" name="telefono" placeholder="+34 666 554 433" required />
+
+  <label for="destino">Destino</label>
+  <select class="mb-4" id="destino" name="destino" required>
+    <option>Cancún, México</option>
+    <option>París, Francia</option>
+    <option>Tokio, Japón</option>
+    <option>Maldivas</option>
+    <option>Nueva York, EE.UU.</option>
+  </select>
+
+  <label for="fecha">Fecha de viaje</label>
+  <input class="mb-4" type="date" id="fecha" name="fecha" required/>
+
+  <label for="adultos">Número de adultos (viajan gratis)</label>
+  <input class="mb-4" type="number" id="adultos" name="adultos" min="1" value="1" required />
+
+  <label for="ninos">Número de niños (pagan ellos)</label>
+  <input class="mb-4" type="number" id="ninos" name="ninos" min="1" value="1" required/>
+
+  <label for="comentarios">Comentarios adicionales</label>
+  <textarea class="bg-slate-800 p-4 rounded-lg"
+    id="comentarios"
+    name="comentarios"
+    rows="3"
+    placeholder="Alergias, peticiones especiales..."
+  ></textarea>
+</div>
+<div class="flex justify-center mt-6 md:mt-12">
+
+<button class="text-2xl p-2 border-3 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white w-fit mx-auto md:p-6 md:text-4xl md:font-medium" type="submit">Reservar ahora</button></div>
+</form>
+      </section>
+    </main>
+    <footer class="flex flex-col justify-center gap-2 text-xs bg-slate-950 py-2 md:text-xl">
+      <div id="contactanos" class="flex flex-row justify-evenly gap-3 p-5 md:gap-10 md:justify-center lg:justify-evenly">
+        <ul class="flex flex-col gap-3 justify-between">
+          <li>info@viajesdelmiro.com</li>
+          <li>662 845 503</li>
+          <li>Calle del Viajero, 49</li>
+          <li>28001 Madrid, España</li>
+        </ul>
+        <ul class="flex flex-col gap-3 justify-between">
+          <li>WhatsApp: 662 845 503</li>
+          <li>Instagram: @ViajesDelmiro</li>
+          <li>Twitter: @ViajesDelmiro</li>
+        </ul>
+      </div>
+      <p class="flex flex-col justify-center text-xs py-5 items-center md:text-lg">
+        &copy; 2026 Viajes Delmiro. Todos los derechos reservados.
+      </p>
+    </footer>
+  </body>
+</html>
