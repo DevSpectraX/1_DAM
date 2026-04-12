@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.fichador.controller.TrabajadorController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <MenuBar>
+            <Menu text="Sesión">
+                <MenuItem fx:id="menuCerrarSesion" text="Cerrar sesión"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+            <Text fx:id="lblBienvenida" text="Bienvenido"
+                  style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+            <Button fx:id="btnFichar" text="Realizar fichaje" prefWidth="200"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            <Label fx:id="lblMensaje" text=""/>
+        </VBox>
+    </center>
+
+</BorderPane>

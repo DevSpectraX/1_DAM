@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.fichador.controller.AdminController"
+            prefHeight="650.0" prefWidth="950.0">
+
+    <top>
+        <MenuBar>
+            <Menu text="Trabajadores">
+                <MenuItem fx:id="menuAlta"          text="Dar de alta"/>
+                <MenuItem fx:id="menuBaja"          text="Dar de baja"/>
+                <MenuItem fx:id="menuVerTrabajador" text="Ver datos de trabajador"/>
+                <MenuItem fx:id="menuVerTodos"      text="Ver todos"/>
+                <MenuItem fx:id="menuCambiarPass"   text="Cambiar contraseña"/>
+            </Menu>
+            <Menu text="Jornada">
+                <MenuItem fx:id="menuJornada"       text="Ver registros de jornada"/>
+            </Menu>
+            <Menu text="Sesión">
+                <MenuItem fx:id="menuCerrarSesion"  text="Cerrar sesión"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <StackPane fx:id="contenedor">
+            <padding><Insets top="30" right="40" bottom="30" left="40"/></padding>
+
+            <VBox fx:id="panelBienvenida" alignment="CENTER" spacing="10" visible="true">
+                <Text text="Panel de Administración"
+                      style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+                <Text text="Selecciona una opción del menú superior"
+                      style="-fx-font-size: 14px;"/>
+            </VBox>
+
+            <VBox fx:id="panelAlta" alignment="CENTER" spacing="15" visible="false" maxWidth="400">
+                <Text text="Dar de alta trabajador"
+                      style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <TextField fx:id="altaNombre"       promptText="Nombre"/>
+                <TextField fx:id="altaApellido"     promptText="Apellido"/>
+                <TextField fx:id="altaDni"          promptText="DNI"/>
+                <TextField fx:id="altaCorreo"       promptText="Correo electrónico"/>
+                <PasswordField fx:id="altaPassword" promptText="Contraseña"/>
+                <ComboBox fx:id="altaRol"           promptText="Rol" prefWidth="400"/>
+                <Button fx:id="btnAlta" text="Dar de alta" prefWidth="400"
+                        style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+            </VBox>
+
+            <VBox fx:id="panelBaja" alignment="CENTER" spacing="15" visible="false" maxWidth="400">
+                <Text text="Dar de baja trabajador"
+                      style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <TextField fx:id="bajaDni" promptText="DNI del trabajador"/>
+                <Button fx:id="btnBaja" text="Dar de baja" prefWidth="400"
+                        style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+            </VBox>
+
+            <VBox fx:id="panelVerTrabajador" alignment="CENTER" spacing="15" visible="false" maxWidth="400">
+                <Text text="Ver datos de trabajador"
+                      style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <TextField fx:id="verDni" promptText="DNI del trabajador"/>
+                <Button fx:id="btnBuscar" text="Buscar" prefWidth="400"
+                        style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+                <Label fx:id="verNombre"   text=""/>
+                <Label fx:id="verApellido" text=""/>
+                <Label fx:id="verCorreo"   text=""/>
+                <Label fx:id="verRol"      text=""/>
+            </VBox>
+
+            <VBox fx:id="panelVerTodos" alignment="CENTER" spacing="15" visible="false">
+                <Text text="Trabajadores del sistema"
+                      style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <TableView fx:id="tablaTrabajadores" prefHeight="400">
+                    <columns>
+                        <TableColumn fx:id="colNombre"   text="Nombre"   prefWidth="150"/>
+                        <TableColumn fx:id="colApellido" text="Apellido"  prefWidth="150"/>
+                        <TableColumn fx:id="colDni"      text="DNI"       prefWidth="100"/>
+                        <TableColumn fx:id="colCorreo"   text="Correo"    prefWidth="200"/>
+                        <TableColumn fx:id="colRol"      text="Rol"       prefWidth="120"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <VBox fx:id="panelCambiarPassword" alignment="CENTER" spacing="15" visible="false" maxWidth="400">
+                <Text text="Cambiar contraseña"
+                      style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <TextField fx:id="passDni"          promptText="DNI del trabajador"/>
+                <PasswordField fx:id="passNueva"    promptText="Nueva contraseña"/>
+                <Button fx:id="btnCambiarPass" text="Cambiar contraseña" prefWidth="400"
+                        style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+            </VBox>
+
+            <VBox fx:id="panelJornada" alignment="CENTER" spacing="15" visible="false">
+                <Text text="Registros de jornada"
+                      style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <TableView fx:id="tablaJornada" prefHeight="400">
+                    <columns>
+                        <TableColumn fx:id="jornadaDni"     text="DNI"        prefWidth="120"/>
+                        <TableColumn fx:id="jornadaNombre"  text="Nombre"      prefWidth="150"/>
+                        <TableColumn fx:id="jornadaEntrada" text="Entrada"     prefWidth="150"/>
+                        <TableColumn fx:id="jornadaSalida"  text="Salida"      prefWidth="150"/>
+                        <TableColumn fx:id="jornadaTotal"   text="Total horas" prefWidth="120"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+        </StackPane>
+    </center>
+
+</BorderPane>
