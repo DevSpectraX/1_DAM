@@ -9,12 +9,12 @@ const videogames = [
     {name: 'Legend of Zelda: Breath of the wild', genders: ['RPG'], score: 10},
 ]
 
-// .filter con .includes
+// .filter con .includes y filtro por RPG
 let onlyRpg = videogames.filter(videogame => videogame.genders.includes("RPG"));
 
 console.log(onlyRpg)
 
-//sacar la media con .reduce
+//sacar la media con de todos los RPG con .reduce
 let mediaScore = onlyRpg.reduce((acc, actual) => acc + actual.score, 0)
 mediaScore = mediaScore/onlyRpg.length
 

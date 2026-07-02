@@ -18,10 +18,10 @@ let totalNotas = exams.reduce((total, actual) => total + actual.score, 0);
 console.log(totalNotas);
 
 
-// 6.2 Dado el mismo array, haz una suma de todos las notas de los examenes de los alumnos que esten aprobados usando la función .reduce().
+// 6.2 Dado el mismo array, haz una suma de todas las notas de los examenes de los alumnos que esten aprobados usando la función .reduce().
 
 let aprobados = exams.reduce((acc, actual) => {
-  if (actual.score > 5) {
+  if (actual.score >= 5) {
     return acc + actual.score;
   } else {
     return acc;
