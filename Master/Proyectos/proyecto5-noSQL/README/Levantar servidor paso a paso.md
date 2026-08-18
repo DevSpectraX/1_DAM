@@ -3,31 +3,31 @@
 
 MongoDB esta vacío.
 
-![Mongo](./images_added.MongoDB Vacio.png)
+![MongoDB_Vacio](./images_added/MongoDB_Vacio.png)
 
 
 ### 2. Cargamos las semillas
 
 Con el siguiente comando en VSCode cargamos las semillas.
 
-![[Comand seeds.png]]
+![Command_seeds.png](./images_added/Command_seeds.png)
 
 
 Ahora en MongoDB vemos que han cargado las semillas correctamente.
 
-![[MongoDB seeds added.png]]
+![MongoDB_seeds_added.png](./images_added/MongoDB_seeds_added.png)
 
 
 ### 3. Levantar el servidor
 
 Hasta el momento Insomnia se muestra así, sin conexión.
 
-![[Captura de pantalla 2026-08-18 110054 1.png]]
+![Insomnia_no_conection.png](./images_added/Insomnia_no_conection.png)
 
 
 Ejecutamos este comando en VSCode para levantar el servidor.
 
-![[Comand run dev.png]]
+![Command_run_dev.png](./images_added/Command_run_dev.png)
 
 
 Y ahora ya podemos empezar a ejecutar las peticiones con Insomnia.
@@ -36,39 +36,44 @@ Y ahora ya podemos empezar a ejecutar las peticiones con Insomnia.
 
 #### Error pagina no encontrada
 
-![[Get_Error.png]]
+![Get_Error.png](./images_added/Get_Error.png)
 
 
 #### Get AllMovies
 
-![[Get_AllMovies.png]]
+![Get_AllMovies.png](./images_added/Get_AllMovies.png)
 
 
 #### Get MoviesByID
 
-![[Get_MoviesByID.png]]
+![Get_MoviesByID.png](./images_added/Get_MoviesByID.png)
 
 
 #### Get MoviesByTitle
 
-![[Get_MoviesByTitle.png]]
+![Get_MoviesByTitle.png](./images_added/Get_MoviesByTitle.png)
+
+
+#### Get MoviesByGenre
+
+![Get_MoviesByGenre.png](./images_added/Get_MoviesByGenre.png)
 
 
 #### Get MoviesByYear
 
-![[Get_MoviesByYear.png]]
+![Get_MoviesByYear.png](./images_added/Get_MoviesByYear.png)
 
 
 #### Post CreateMovie
 
-![[Post_CreateMovie.png]]
+![Post_CreateMovie.png](./images_added/Post_CreateMovie.png)
 
 
 #### Put UpdateMovie
 
-![[Put_UpdateMovie.png]]
+![Put_UpdateMovie.png](./images_added/Put_UpdateMovie.png)
 
 
 #### Delete DeleteMovie
 
-![[Delete_DeleteByID.png]]
+![Delete_DeleteByID.png](./images_added/Delete_DeleteByID.png)
