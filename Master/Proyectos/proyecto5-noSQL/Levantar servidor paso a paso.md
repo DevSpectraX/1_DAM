@@ -3,19 +3,19 @@
 
 MongoDB esta vacío.
 
-![[Captura de pantalla 2026-08-18 105815.png]]
+![[MongoDB Vacio.png]]
 
 
 ### 2. Cargamos las semillas
 
 Con el siguiente comando en VSCode cargamos las semillas.
 
-![[Captura de pantalla 2026-08-18 105838.png]]
+![[Comand seeds.png]]
 
 
 Ahora en MongoDB vemos que han cargado las semillas correctamente.
 
-![[Captura de pantalla 2026-08-18 105927.png]]
+![[MongoDB seeds added.png]]
 
 
 ### 3. Levantar el servidor
@@ -27,7 +27,7 @@ Hasta el momento Insomnia se muestra así, sin conexión.
 
 Ejecutamos este comando en VSCode para levantar el servidor.
 
-![[Captura de pantalla 2026-08-18 110114.png]]
+![[Comand run dev.png]]
 
 
 Y ahora ya podemos empezar a ejecutar las peticiones con Insomnia.
