@@ -13,7 +13,7 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "images_added/Comand run dev.png"
+                "file": "README/images_added/Comand run dev.png"
               },
               "icon": "lucide-image",
               "title": "Comand run dev"
@@ -186,16 +186,17 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "adfcc79142442371",
+  "active": "d4d5aa9ee80677a5",
   "lastOpenFiles": [
-    "images_added/Server.png",
-    "images_added/Comand seeds added.png",
-    "images_added/Comand seeds.png",
-    "images_added/Comand run dev.png",
-    "images_added/Insomnia no conection.png",
-    "images_added/MongoDB seeds added.png",
-    "images_added/Delete_DeleteByID.png",
-    "images_added/MongoDB Vacio.png",
-    "Levantar servidor paso a paso.md"
+    "README",
+    "README/images_added/Server.png",
+    "README/images_added/Comand seeds added.png",
+    "README/images_added/Comand seeds.png",
+    "README/images_added/Comand run dev.png",
+    "README/images_added/Insomnia no conection.png",
+    "README/images_added/MongoDB seeds added.png",
+    "README/images_added/Delete_DeleteByID.png",
+    "README/images_added/MongoDB Vacio.png",
+    "README/Levantar servidor paso a paso.md"
   ]
 }

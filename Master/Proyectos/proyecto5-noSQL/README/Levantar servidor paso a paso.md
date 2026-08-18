@@ -3,7 +3,7 @@
 
 MongoDB esta vacío.
 
-![[MongoDB Vacio.png]]
+![Mongo](./images_added.MongoDB Vacio.png)
 
 
 ### 2. Cargamos las semillas
