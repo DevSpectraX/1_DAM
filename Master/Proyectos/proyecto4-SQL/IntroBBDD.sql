@@ -26,8 +26,14 @@ identificadores de vuelo que han volado con un Boeing 737. (Código Modelo Avió
 /*  Nota: El Modelo actualmente es 7M7 y la columna se encuentra en jsonb, he necesitado pasar de json a texto 
 usando ::text y luego buscar Boeing737. */
 
-SELECT * FROM airplanes_data
-WHERE model::text ILIKE '%Boeing 737%';
+SELECT flight_id FROM airplanes_data AS ad
+
+JOIN routes r
+	ON ad.airplane_code = r.airplane_code
+JOIN flights f
+	ON r.route_no = f.route_no
+	
+WHERE model::text ILIKE '%Boeing 737%'
 
 
 5. Escribe una consulta que te muestre la información detallada de los tickets que han comprado 
